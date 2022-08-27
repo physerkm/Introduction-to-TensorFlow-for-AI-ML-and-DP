@@ -29,3 +29,12 @@ Why do you think that might be? There's 2 main reasons.
 1. Computers do better with numbers than they do with texts.
 2. Importantly, this is something that can help us reduce bias. If we labeled it as an ankle boot, we would be biasing towards English speakers. But with it being a numeric label, we can then refer to it in our appropriate language be it English, Chinese, Japanese, or here, even Irish Gaelic.
 
+## **Coding a Computer Vision Neural Network**
+
+We will look at the code for the neural network definition. Remember last time we had a sequential with just 1 layer in it. Now we have 3 layers. The important things to look at are the first and the last layers. The last layer has 10 neurons in it because we have ten classes of clothing in the dataset. They should always match. The first layer is a flatten layer with the input shaping 28x28. If you remember our images are 28x28, so we're specifying that this is the shape that we should expect the data to be in. Flatten takes this 28x28 square and turns it into a simple linear array.
+
+The interesting stuff happens in the middle layer, sometimes also called a hidden layer. This is a 128 neurons in it, and I'd like you to think about these as variables in a function. Maybe call them x1, x2 x3, etc. Now, there exists a rule that incorporates all of these that turns the 784 values of an ankle boot into the value 9, and similar for all of the other 70,000.
+
+It's too complex a function for you to see by mapping the images yourself, but that's what a neural net does. So, for example, if you then say the function was y = w<sub>1</sub> * x<sub>1</sub> + w<sub>2</sub> * x<sub>2</sub> + w<sub>3</sub> * x<sub>3</sub>, all the way up to a w<sub>128</sub> * x<sub>128</sub>. By figuring out the values of w, then y will be 9, when you have the input value of the shoe. You'll see that it's doing something very similar to what we did earlier when we figured out `y=2x-1`. In that case the two, was the weight of x. So, I'm saying y = w<sub>1</sub> * x<sub>1</sub>, etc.
+
+Don't worry if this isn't very clear right now. Over time, you will get the hang of it, seeing that it works, and there's also some tools that will allow you to peek inside to see what's going on. The important thing for now is to get the code working, so you can see a classification scenario for yourself. You can also tune the neural network by adding, removing and changing layer size to see the impact. 
